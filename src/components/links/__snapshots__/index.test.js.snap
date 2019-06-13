@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Links component Renders Links component 1`] = `
+<div
+  className="Links"
+>
+  <ul>
+    <li>
+      <a
+        aria-current="page"
+        className="Links-item Links-item--active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <i
+          className="material-icons"
+        >
+          home
+        </i>
+        <span
+          className="Links-item--text"
+        >
+          Home
+        </span>
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current={null}
+        className="Links-item"
+        href="/people"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          person_outline
+        </i>
+        <span
+          className="Links-item--text"
+        >
+          People
+        </span>
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current={null}
+        className="Links-item"
+        href="/doors"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          meeting_room
+        </i>
+        <span
+          className="Links-item--text"
+        >
+          Doors
+        </span>
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current={null}
+        className="Links-item"
+        href="/events"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          update
+        </i>
+        <span
+          className="Links-item--text"
+        >
+          Events
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

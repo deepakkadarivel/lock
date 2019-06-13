@@ -23,7 +23,7 @@
     "lint-staged": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --env=jsdom --colors",
+    "test": "CI=true react-scripts test --coverage --env=jsdom --colors",
     "cy:open": "cypress open",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
