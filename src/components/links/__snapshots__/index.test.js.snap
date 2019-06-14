@@ -8,7 +8,7 @@ exports[`Links component Renders Links component 1`] = `
     <li>
       <a
         aria-current="page"
-        className="Links-item Links-item--active"
+        className="Links-item ripple Links-item--active"
         href="/"
         onClick={[Function]}
         style={Object {}}
@@ -28,7 +28,7 @@ exports[`Links component Renders Links component 1`] = `
     <li>
       <a
         aria-current={null}
-        className="Links-item"
+        className="Links-item ripple"
         href="/people"
         onClick={[Function]}
       >
@@ -47,7 +47,7 @@ exports[`Links component Renders Links component 1`] = `
     <li>
       <a
         aria-current={null}
-        className="Links-item"
+        className="Links-item ripple"
         href="/doors"
         onClick={[Function]}
       >
@@ -66,7 +66,7 @@ exports[`Links component Renders Links component 1`] = `
     <li>
       <a
         aria-current={null}
-        className="Links-item"
+        className="Links-item ripple"
         href="/events"
         onClick={[Function]}
       >

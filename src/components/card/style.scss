@@ -1,0 +1,52 @@
+@import '../../colors.scss';
+
+.Card {
+    // width: 50%;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: 1px solid $grey;
+    background-color: $light-grey;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+        // background-color: $teal;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
+    }
+
+    &-data {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-data > p {
+        margin-left: 8px;
+        font-size: 14px;
+    }
+
+    &-action > i {
+        color: $secondary-text;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            color: $black;
+        }
+    }
+
+    &-icon {
+        color: $teal;
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Card {
+        // width: 88%;
+    }
+}

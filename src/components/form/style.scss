@@ -1,0 +1,18 @@
+@import '../../colors.scss';
+
+.Form {
+    &-input {
+        width: 96%;
+        height: 32px;
+        padding-left: 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        border: 1px solid $black;
+    }
+    &-footer {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+    }
+}

@@ -1,0 +1,20 @@
+@import '../../colors.scss';
+
+.Fab {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $teal;
+    color: $black;
+    position: fixed;
+    bottom: 32px;
+    right: 48px;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .Fab {
+        bottom: 72px;
+        right: 32px;
+    }
+}

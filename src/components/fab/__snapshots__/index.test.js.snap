@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fab component Renders Fab component 1`] = `
+<button
+  className="Fab ripple"
+  onClick={[Function]}
+  type="button"
+>
+  <i
+    className="material-icons"
+  >
+    add
+  </i>
+</button>
+`;

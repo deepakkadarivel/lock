@@ -9,7 +9,7 @@ const Links = () => {
             <ul>
                 <li>
                     <NavLink
-                        className="Links-item"
+                        className="Links-item ripple"
                         exact
                         activeClassName="Links-item--active"
                         to="/"
@@ -22,7 +22,7 @@ const Links = () => {
                 </li>
                 <li>
                     <NavLink
-                        className="Links-item"
+                        className="Links-item ripple"
                         activeClassName="Links-item--active"
                         to="/people"
                     >
@@ -34,7 +34,7 @@ const Links = () => {
                 </li>
                 <li>
                     <NavLink
-                        className="Links-item"
+                        className="Links-item ripple"
                         activeClassName="Links-item--active"
                         to="/doors"
                     >
@@ -46,7 +46,7 @@ const Links = () => {
                 </li>
                 <li>
                     <NavLink
-                        className="Links-item"
+                        className="Links-item ripple"
                         activeClassName="Links-item--active"
                         to="/events"
                     >

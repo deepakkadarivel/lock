@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Home from '../home';
 import People from '../people';
-import Doors from '../doors';
+import DoorsContainer from '../doors/container';
 import Events from '../events';
 import NotFound from '../notFound';
 import './style.scss';
@@ -16,7 +16,7 @@ const routing = (
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/people" component={People} />
-                    <Route path="/doors" component={Doors} />
+                    <Route path="/doors" component={DoorsContainer} />
                     <Route path="/events" component={Events} />
                     <Route component={NotFound} />
                 </Switch>
