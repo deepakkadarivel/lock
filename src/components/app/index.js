@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import Home from '../home';
-import People from '../people';
+import HomeContainer from '../home/container';
+import PeopleContainer from '../people/container';
 import DoorsContainer from '../doors/container';
-import Events from '../events';
+import EventsContainer from '../events/container';
 import NotFound from '../notFound';
 import './style.scss';
 import Links from '../links';
@@ -14,10 +14,10 @@ const routing = (
             <Links />
             <div className="App-content">
                 <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/people" component={People} />
+                    <Route exact path="/" component={HomeContainer} />
+                    <Route path="/people" component={PeopleContainer} />
                     <Route path="/doors" component={DoorsContainer} />
-                    <Route path="/events" component={Events} />
+                    <Route path="/events" component={EventsContainer} />
                     <Route component={NotFound} />
                 </Switch>
             </div>

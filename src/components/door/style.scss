@@ -1,0 +1,38 @@
+@import '../../colors.scss';
+
+.Doors {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr [col-start]);
+    grid-column-gap: 2%;
+    grid-row-gap: 20px;
+
+    &-item {
+        display: flex;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        border: 1px solid $grey;
+        cursor: pointer;
+        background-color: $teal;
+        color: $white;
+        font-size: 18px;
+
+        &:hover {
+            background-color: $teal-light;
+            box-shadow: 2px 2px 4px $grey;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Doors {
+        grid-template-columns: repeat(3, 1fr [col-start]);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Doors {
+        grid-template-columns: repeat(2, 1fr [col-start]);
+    }
+}

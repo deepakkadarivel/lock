@@ -2,13 +2,25 @@
 
 .Form {
     &-input {
-        width: 96%;
+        width: 97%;
         height: 32px;
         padding-left: 8px;
         border-radius: 4px;
         font-size: 14px;
         border: 1px solid $black;
+
+        &--error {
+            margin-top: 4px;
+            color: $red;
+        }
     }
+
+    &-select {
+        margin-top: 10px;
+        border-radius: 4px;
+        border: 1px solid $black;
+    }
+
     &-footer {
         margin-top: 20px;
         display: grid;

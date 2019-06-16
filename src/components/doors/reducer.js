@@ -2,13 +2,19 @@ import seamlessImmutable from 'seamless-immutable';
 import { actionTypes } from './actions';
 
 const initialState = seamlessImmutable({
-    doors: []
+    doors: [],
+    selectedDoor: { name: '' }
 });
 
 export default function(state = initialState, action) {
     switch (action.type) {
     case actionTypes.LOAD_DOORS:
         return state.set('doors', action.doors);
+    case actionTypes.GET_DOOR:
+        return state.set(
+            'selectedDoor',
+            action.door || initialState.selectedDoor
+        );
     case actionTypes.ADD_DOOR:
         return state.set('doors', [...state.doors, action.door]);
     case actionTypes.UPDATE_DOOR: {

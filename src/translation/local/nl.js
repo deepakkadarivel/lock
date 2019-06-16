@@ -1,7 +1,7 @@
 export default {
     add: {
         door: 'Voeg een deur toe',
-        people: 'Voeg een persoon toe met toegang tot de deur'
+        person: 'Voeg een persoon toe met toegang tot de deur'
     },
     buttons: {
         add: 'Toevoegen',
@@ -13,7 +13,9 @@ export default {
         home: 'Huis',
         people: 'Mensen'
     },
-    placeHolder: {
-        doorName: 'Deurnaam'
+    placeholder: {
+        doorName: 'Deurnaam',
+        personName: 'Naam',
+        selectDoors: 'Set accessible doors'
     }
 };

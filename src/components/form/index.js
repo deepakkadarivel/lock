@@ -4,23 +4,25 @@ import t from '../../translation';
 import './style.scss';
 
 const Form = props => {
-    const { toggleDialog, handleSubmit, children } = props;
+    const { toggleDialog, handleSubmit, children, hideFooter = false } = props;
     return (
         <form className="Form" onSubmit={handleSubmit}>
             {children}
-            <div className="Form-footer">
-                <input
-                    type="button"
-                    className="Btn"
-                    onClick={toggleDialog}
-                    value={t('buttons.cancel')}
-                />
-                <input
-                    type="submit"
-                    className="Btn Btn-primary"
-                    value={t('buttons.add')}
-                />
-            </div>
+            {hideFooter && (
+                <div className="Form-footer">
+                    <input
+                        type="button"
+                        className="Btn"
+                        onClick={toggleDialog}
+                        value={t('buttons.cancel')}
+                    />
+                    <input
+                        type="submit"
+                        className="Btn Btn-primary"
+                        value={t('buttons.add')}
+                    />
+                </div>
+            )}
         </form>
     );
 };
@@ -28,7 +30,12 @@ const Form = props => {
 Form.propTypes = {
     toggleDialog: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    hideFooter: PropTypes.bool
+};
+
+Form.defaultProps = {
+    hideFooter: false
 };
 
 export default Form;

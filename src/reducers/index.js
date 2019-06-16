@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import doorsReducer from '../components/doors/reducer';
-
-const initialReducer = (state = []) => state;
+import peopleReducer from '../components/people/reducer';
+import homeReducer from '../components/home/reducer';
+import eventsReducer from '../components/events/reducer';
 
 const rootReducer = combineReducers({
     doors: doorsReducer,
-    people: initialReducer
+    people: peopleReducer,
+    home: homeReducer,
+    events: eventsReducer
 });
 export default rootReducer;

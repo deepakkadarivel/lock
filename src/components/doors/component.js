@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Fab from '../fab';
 import Dialog from '../dialog';
 import t from '../../translation';
-import Form from '../form';
 import Card from '../card';
 
 class Doors extends Component {
@@ -11,20 +11,15 @@ class Doors extends Component {
         super(props);
         this.state = {
             isDialogVisible: false,
-            name: ''
+            isUpdate: false
         };
         this.toggleDialog = this.toggleDialog.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.setName = this.setName.bind(this);
     }
 
     componentDidMount() {
-        const { loadDoors } = this.props;
+        const { loadDoors, getSelectedDoor } = this.props;
         loadDoors();
-    }
-
-    setName(name) {
-        this.setState({ name });
+        getSelectedDoor();
     }
 
     toggleDialog() {
@@ -32,18 +27,20 @@ class Doors extends Component {
         this.setState({ isDialogVisible: !isDialogVisible });
     }
 
-    handleSubmit(e) {
-        const { name } = this.state;
-        const { addDoor } = this.props;
-        e.preventDefault();
-        addDoor(name);
-        this.setName('');
-        this.toggleDialog();
+    toggleUpdate(isUpdate) {
+        this.setState({ isUpdate });
     }
 
     render() {
-        const { isDialogVisible, name } = this.state;
-        const { doors, deleteDoor } = this.props;
+        const { isDialogVisible, isUpdate } = this.state;
+        const {
+            doors,
+            deleteDoor,
+            addDoor,
+            selectedDoor,
+            getSelectedDoor,
+            updateDoor
+        } = this.props;
         return (
             <div>
                 <h1>Doors</h1>
@@ -53,28 +50,85 @@ class Doors extends Component {
                         text={door.name}
                         key={door.id}
                         onDelete={() => deleteDoor(door.id)}
+                        onClick={() => {
+                            getSelectedDoor(door.id);
+                            this.toggleUpdate(true);
+                            this.toggleDialog();
+                        }}
                     />
                 ))}
-                <Fab onClick={this.toggleDialog} icon="add" />
+                <Fab
+                    onClick={() => {
+                        this.toggleDialog();
+                        this.toggleUpdate(false);
+                        getSelectedDoor();
+                    }}
+                    icon="add"
+                />
                 {isDialogVisible && (
                     <Dialog
-                        header={t('add.door')}
+                        header={isUpdate ? t('updateDoor') : t('addDoor')}
                         form={
-                            <Form
-                                toggleDialog={this.toggleDialog}
-                                handleSubmit={this.handleSubmit}
+                            <Formik
+                                initialValues={selectedDoor}
+                                enableReinitialize
+                                validate={values => {
+                                    const errors = {};
+                                    if (!values.name) {
+                                        errors.name = 'Required';
+                                    }
+                                    return errors;
+                                }}
+                                onSubmit={(values, { setSubmitting }) => {
+                                    this.toggleDialog();
+                                    if (isUpdate) {
+                                        updateDoor(
+                                            selectedDoor.id,
+                                            values.name
+                                        );
+                                    } else {
+                                        addDoor(values.name);
+                                    }
+                                    setSubmitting(false);
+                                }}
                             >
-                                <input
-                                    className="Form-input"
-                                    type="text"
-                                    // eslint-disable-next-line jsx-a11y/no-autofocus
-                                    autoFocus
-                                    value={name}
-                                    placeholder={t('placeHolder.doorName')}
-                                    required
-                                    onChange={e => this.setName(e.target.value)}
-                                />
-                            </Form>
+                                {({ isSubmitting }) => (
+                                    <Form>
+                                        <Field
+                                            className="Form-input"
+                                            type="text"
+                                            autoFocus
+                                            name="name"
+                                            placeholder={t(
+                                                'placeholder.doorName'
+                                            )}
+                                        />
+                                        <ErrorMessage
+                                            name="name"
+                                            component="div"
+                                            className="Form-input--error"
+                                        />
+                                        <div className="Form-footer">
+                                            <button
+                                                type="button"
+                                                className="Btn"
+                                                onClick={this.toggleDialog}
+                                            >
+                                                {t('buttons.cancel')}
+                                            </button>
+                                            <button
+                                                type="submit"
+                                                className="Btn Btn-primary"
+                                                disabled={isSubmitting}
+                                            >
+                                                {isUpdate
+                                                    ? t('buttons.update')
+                                                    : t('buttons.add')}
+                                            </button>
+                                        </div>
+                                    </Form>
+                                )}
+                            </Formik>
                         }
                     />
                 )}
@@ -87,7 +141,10 @@ Doors.propTypes = {
     addDoor: PropTypes.func.isRequired,
     loadDoors: PropTypes.func.isRequired,
     deleteDoor: PropTypes.func.isRequired,
-    doors: PropTypes.array.isRequired
+    updateDoor: PropTypes.func.isRequired,
+    getSelectedDoor: PropTypes.func.isRequired,
+    doors: PropTypes.array.isRequired,
+    selectedDoor: PropTypes.object.isRequired
 };
 
 export default Doors;

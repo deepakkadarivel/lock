@@ -4,7 +4,8 @@ export const actionTypes = {
     ADD_DOOR: 'ADD_DOOR',
     UPDATE_DOOR: 'UPDATE_DOOR',
     DELETE_DOOR: 'DELETE_DOOR',
-    LOAD_DOORS: 'LOAD_DOORS'
+    LOAD_DOORS: 'LOAD_DOORS',
+    GET_DOOR: 'GET_DOOR'
 };
 
 export function loadDoors() {
@@ -15,6 +16,19 @@ export function loadDoors() {
                 dispatch({
                     type: actionTypes.LOAD_DOORS,
                     doors
+                });
+            });
+    };
+}
+
+export function getSelectedDoor(id = 0) {
+    return dispatch => {
+        db.table('doors')
+            .get(id)
+            .then(door => {
+                dispatch({
+                    type: actionTypes.GET_DOOR,
+                    door
                 });
             });
     };
