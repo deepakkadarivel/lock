@@ -43,7 +43,7 @@ class Doors extends Component {
         } = this.props;
         return (
             <div>
-                <h1>Doors</h1>
+                <h1>{t('nav.doors')}</h1>
                 {doors.map(door => (
                     <Card
                         icon="meeting_room"

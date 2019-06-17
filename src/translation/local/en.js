@@ -6,6 +6,9 @@ export default {
     updatePerson: 'Update person with door access',
     unlockDoors: 'Unlock Doors',
     selectPerson: 'Select a person to access door',
+    grantedAccessFor: 'Granted access for : ',
+    deniedAccessFor: 'Denied access for : ',
+    selectUser: 'Select a user from the below user icon to access the doors.',
     buttons: {
         add: 'Add',
         update: 'Update',

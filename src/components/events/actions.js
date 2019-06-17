@@ -19,10 +19,8 @@ export function loadEvents() {
 }
 
 export function addEvent(event) {
-    console.log(event);
     return dispatch => {
         const eventToAdd = { event, time: new Date() };
-        console.log(eventToAdd);
         db.table('events')
             .add(eventToAdd)
             .then(id => {
