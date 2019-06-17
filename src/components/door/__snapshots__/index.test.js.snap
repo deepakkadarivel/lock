@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Door component Renders Door component 1`] = `
+<div
+  className="Doors-item"
+  onClick={[Function]}
+  role="presentation"
+>
+  <i
+    className="material-icons"
+  >
+    meeting_room
+  </i>
+  door name
+</div>
+`;

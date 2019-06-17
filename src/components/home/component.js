@@ -63,7 +63,7 @@ class Home extends Component {
                 {isDialogVisible && (
                     <Dialog
                         header={t('selectPerson')}
-                        hideFooter
+                        showFooter={false}
                         form={
                             <Form
                                 toggleDialog={this.toggleDialog}

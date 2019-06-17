@@ -29,8 +29,8 @@ const Card = ({ text, subText, icon, onDelete, onClick }) => {
 
 Card.propTypes = {
     text: PropTypes.string.isRequired,
-    subText: PropTypes.string,
     icon: PropTypes.string.isRequired,
+    subText: PropTypes.string,
     onDelete: PropTypes.func,
     onClick: PropTypes.func
 };

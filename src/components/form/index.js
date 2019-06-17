@@ -4,11 +4,11 @@ import t from '../../translation';
 import './style.scss';
 
 const Form = props => {
-    const { toggleDialog, handleSubmit, children, hideFooter = false } = props;
+    const { toggleDialog, handleSubmit, children, showFooter } = props;
     return (
         <form className="Form" onSubmit={handleSubmit}>
             {children}
-            {hideFooter && (
+            {showFooter && (
                 <div className="Form-footer">
                     <input
                         type="button"
@@ -31,11 +31,11 @@ Form.propTypes = {
     toggleDialog: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
-    hideFooter: PropTypes.bool
+    showFooter: PropTypes.bool
 };
 
 Form.defaultProps = {
-    hideFooter: false
+    showFooter: true
 };
 
 export default Form;

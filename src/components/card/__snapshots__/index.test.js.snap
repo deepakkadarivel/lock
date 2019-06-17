@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component Renders Card component 1`] = `
+<div
+  className="Card"
+  onClick={[Function]}
+  role="presentation"
+>
+  <span
+    className="Card-data"
+  >
+    <i
+      className="material-icons Card-icon"
+    >
+      add
+    </i>
+    <div>
+      <p
+        className="Card-data--text"
+      >
+        card test content
+      </p>
+      <p
+        className="Card-data--subText"
+      >
+        card sub test content
+      </p>
+    </div>
+  </span>
+  <span
+    className="Card-action"
+  >
+    <i
+      className="material-icons"
+      onClick={[Function]}
+      role="presentation"
+    >
+      delete
+    </i>
+  </span>
+</div>
+`;
