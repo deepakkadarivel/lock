@@ -44,18 +44,15 @@ class Doors extends Component {
         return (
             <div>
                 <h1>{t('nav.doors')}</h1>
-                {!doors.length && <p>{t('empty.doors')}</p>}
+                {!doors.length && (
+                    <p className="t-placeholder">{t('empty.doors')}</p>
+                )}
                 {doors.map(door => (
                     <Card
                         icon="meeting_room"
                         text={door.name}
                         key={door.id}
                         onDelete={() => deleteDoor(door.id)}
-                        onClick={() => {
-                            getSelectedDoor(door.id);
-                            this.toggleUpdate(true);
-                            this.toggleDialog();
-                        }}
                     />
                 ))}
                 <Fab
@@ -96,7 +93,7 @@ class Doors extends Component {
                                 {({ isSubmitting }) => (
                                     <Form>
                                         <Field
-                                            className="Form-input"
+                                            className="Form-input t-input--name"
                                             type="text"
                                             autoFocus
                                             name="name"
@@ -112,14 +109,14 @@ class Doors extends Component {
                                         <div className="Form-footer">
                                             <button
                                                 type="button"
-                                                className="Btn"
+                                                className="Btn t-cancel"
                                                 onClick={this.toggleDialog}
                                             >
                                                 {t('buttons.cancel')}
                                             </button>
                                             <button
                                                 type="submit"
-                                                className="Btn Btn-primary"
+                                                className="Btn Btn-primary t-add"
                                                 disabled={isSubmitting}
                                             >
                                                 {isUpdate

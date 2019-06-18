@@ -31,7 +31,7 @@ exports[`Card component Renders Card component 1`] = `
     className="Card-action"
   >
     <i
-      className="material-icons"
+      className="material-icons t-delete"
       onClick={[Function]}
       role="presentation"
     >

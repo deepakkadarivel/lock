@@ -16,7 +16,7 @@ const Card = ({ text, subText, icon, onDelete, onClick }) => {
                 <span className="Card-action">
                     <i
                         role="presentation"
-                        className="material-icons"
+                        className="material-icons t-delete"
                         onClick={onDelete}
                     >
                         delete
