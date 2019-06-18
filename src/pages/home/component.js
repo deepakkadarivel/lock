@@ -41,6 +41,7 @@ class Home extends Component {
         return (
             <div className="Home">
                 <h1>{t('unlockDoors')}</h1>
+                {!doors.length && <p>{t('empty.home')}</p>}
                 <div className="Doors">
                     {doors.map(door => (
                         <Door

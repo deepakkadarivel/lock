@@ -15,6 +15,7 @@ class Events extends Component {
         return (
             <div>
                 <h1>{t('nav.events')}</h1>
+                {!events.length && <p>{t('empty.events')}</p>}
                 {events.map(event => (
                     <Card
                         icon="update"

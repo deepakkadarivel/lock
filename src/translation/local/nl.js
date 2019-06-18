@@ -10,6 +10,12 @@ export default {
     deniedAccessFor: 'Toegang geweigerd voor : ',
     selectUser:
         'Selecteer een gebruiker van het onderstaande gebruikerspictogram om toegang te krijgen tot de deuren.',
+    empty: {
+        home: 'Geen deuren beschikbaar om te ontgrendelen.',
+        people: 'Geen leden beschikbaar, voeg wat toe.',
+        doors: 'Geen deuren beschikbaar, voeg er een toe.',
+        events: 'Nog geen evenementen beschikbaar.'
+    },
     buttons: {
         add: 'Toevoegen',
         update: 'Bijwerken',

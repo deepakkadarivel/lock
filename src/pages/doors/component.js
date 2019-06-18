@@ -44,6 +44,7 @@ class Doors extends Component {
         return (
             <div>
                 <h1>{t('nav.doors')}</h1>
+                {!doors.length && <p>{t('empty.doors')}</p>}
                 {doors.map(door => (
                     <Card
                         icon="meeting_room"

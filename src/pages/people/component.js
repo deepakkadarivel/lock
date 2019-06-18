@@ -57,6 +57,7 @@ class People extends Component {
         return (
             <div>
                 <h1>{t('nav.people')}</h1>
+                {!people.length && <p>{t('empty.people')}</p>}
                 {people.map(person => (
                     <Card
                         icon="person_outline"
