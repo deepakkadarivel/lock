@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import doorsReducer from '../components/doors/reducer';
-import peopleReducer from '../components/people/reducer';
-import homeReducer from '../components/home/reducer';
-import eventsReducer from '../components/events/reducer';
+import doorsReducer from '../pages/doors/reducer';
+import peopleReducer from '../pages/people/reducer';
+import homeReducer from '../pages/home/reducer';
+import eventsReducer from '../pages/events/reducer';
 
 const rootReducer = combineReducers({
     doors: doorsReducer,

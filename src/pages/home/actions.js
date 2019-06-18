@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addEvent } from '../events/actions';
-import t from '../../translation';
+import t from '../../translation/index';
 
 toast.configure({
     autoClose: 4000,
@@ -10,9 +10,7 @@ toast.configure({
 });
 
 export const actionTypes = {
-    SET_APP_USER: 'SET_APP_USER',
-    CHECK_ACCESS: 'CHECK_ACCESS',
-    SET_EVENT: 'SET_EVENT'
+    SET_APP_USER: 'SET_APP_USER'
 };
 
 export function setAppUser(user) {
@@ -25,14 +23,10 @@ export function setAppUser(user) {
 }
 
 export function checkAccess(selectedDoor, user) {
-    const doorIds = user.accessibleDoors.map(door => door.id);
-    const shouldGrantAccess = doorIds.includes(selectedDoor.id);
     return dispatch => {
         if (user.name) {
-            dispatch({
-                type: actionTypes.CHECK_ACCESS,
-                shouldGrantAccess
-            });
+            const doorIds = user.accessibleDoors.map(door => door.id);
+            const shouldGrantAccess = doorIds.includes(selectedDoor.id);
 
             let message = '';
 

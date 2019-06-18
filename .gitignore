@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.idea
+D_lock^Db.sqlite
+__sysdb__.sqlite
+__sysdb__.sqlite-journal

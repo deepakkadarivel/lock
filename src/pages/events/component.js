@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Card from '../card';
-import t from '../../translation';
+import Card from '../../components/card/index';
+import t from '../../translation/index';
 
 class Events extends Component {
     componentDidMount() {

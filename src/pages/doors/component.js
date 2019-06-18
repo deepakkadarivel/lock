@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import Fab from '../fab';
-import Dialog from '../dialog';
-import t from '../../translation';
-import Card from '../card';
+import Fab from '../../components/fab/index';
+import Dialog from '../../components/dialog/index';
+import t from '../../translation/index';
+import Card from '../../components/card/index';
 
 class Doors extends Component {
     constructor(props) {

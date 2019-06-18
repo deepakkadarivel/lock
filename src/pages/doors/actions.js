@@ -1,4 +1,4 @@
-import db from '../../database';
+import db from '../../database/index';
 
 export const actionTypes = {
     ADD_DOOR: 'ADD_DOOR',

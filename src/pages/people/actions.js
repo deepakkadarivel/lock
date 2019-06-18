@@ -1,4 +1,4 @@
-import db from '../../database';
+import db from '../../database/index';
 
 export const actionTypes = {
     ADD_PERSON: 'ADD_PERSON',

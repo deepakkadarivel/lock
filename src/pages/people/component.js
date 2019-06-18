@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Select from 'react-select';
-import Fab from '../fab';
-import Dialog from '../dialog';
-import t from '../../translation';
-// import Form from '../form';
-import Card from '../card';
+import Fab from '../../components/fab/index';
+import Dialog from '../../components/dialog/index';
+import t from '../../translation/index';
+import Card from '../../components/card/index';
 
 class People extends Component {
     constructor(props) {
@@ -171,32 +170,6 @@ class People extends Component {
                                     </Form>
                                 )}
                             </Formik>
-                            // <Form
-                            //     toggleDialog={this.toggleDialog}
-                            //     handleSubmit={this.handleSubmit}
-                            // >
-                            //     <input
-                            //         className="Form-input"
-                            //         type="text"
-                            //         // eslint-disable-next-line jsx-a11y/no-autofocus
-                            //         autoFocus
-                            //         value={name}
-                            //         placeholder={t('placeholder.personName')}
-                            //         required
-                            //         onChange={e => this.setName(e.target.value)}
-                            //     />
-
-                            //     <Select
-                            //         styles={customStyles}
-                            //         closeMenuOnSelect={false}
-                            //         isMulti
-                            //         options={doors}
-                            //         placeholder={t('placeholder.selectDoors')}
-                            //         onChange={option =>
-                            //             this.setAccessibleDoors(option)
-                            //         }
-                            //     />
-                            // </Form>
                         }
                     />
                 )}

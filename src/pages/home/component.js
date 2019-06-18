@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
-import Fab from '../fab';
-import Dialog from '../dialog';
-import t from '../../translation';
-import Form from '../form';
-import Door from '../door';
+import Fab from '../../components/fab/index';
+import Dialog from '../../components/dialog/index';
+import t from '../../translation/index';
+import Door from '../../components/door/index';
 
 class Home extends Component {
     constructor(props) {
@@ -14,7 +13,6 @@ class Home extends Component {
             isDialogVisible: false
         };
         this.toggleDialog = this.toggleDialog.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -26,11 +24,6 @@ class Home extends Component {
     toggleDialog() {
         const { isDialogVisible } = this.state;
         this.setState({ isDialogVisible: !isDialogVisible });
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        this.toggleDialog();
     }
 
     render() {
@@ -46,7 +39,7 @@ class Home extends Component {
         };
 
         return (
-            <div>
+            <div className="Home">
                 <h1>{t('unlockDoors')}</h1>
                 <div className="Doors">
                     {doors.map(door => (
@@ -63,23 +56,17 @@ class Home extends Component {
                 {isDialogVisible && (
                     <Dialog
                         header={t('selectPerson')}
-                        showFooter={false}
                         form={
-                            <Form
-                                toggleDialog={this.toggleDialog}
-                                handleSubmit={this.handleSubmit}
-                            >
-                                <Select
-                                    styles={customStyles}
-                                    options={people}
-                                    placeholder={t('placeholder.selectDoors')}
-                                    onChange={option => {
-                                        setAppUser(option);
-                                        this.toggleDialog();
-                                    }}
-                                    value={user.name ? user : people[0]}
-                                />
-                            </Form>
+                            <Select
+                                styles={customStyles}
+                                options={people}
+                                placeholder={t('placeholder.selectDoors')}
+                                onChange={option => {
+                                    setAppUser(option);
+                                    this.toggleDialog();
+                                }}
+                                value={user.name ? user : people[0]}
+                            />
                         }
                     />
                 )}

@@ -4,9 +4,9 @@ import HomeContainer from '../home/container';
 import PeopleContainer from '../people/container';
 import DoorsContainer from '../doors/container';
 import EventsContainer from '../events/container';
-import NotFound from '../notFound';
+import NotFound from '../../components/notFound/index';
 import './style.scss';
-import Links from '../links';
+import Links from '../../components/links';
 
 const routing = (
     <Router>

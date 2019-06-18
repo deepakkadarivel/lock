@@ -1,4 +1,4 @@
-import db from '../../database';
+import db from '../../database/index';
 
 export const actionTypes = {
     LOAD_EVENTS: 'LOAD_EVENTS',
@@ -6,8 +6,9 @@ export const actionTypes = {
 };
 
 export function loadEvents() {
-    return dispatch => {
-        db.table('events')
+    return dispatch =>
+        db
+            .table('events')
             .toArray()
             .then(events => {
                 dispatch({
@@ -15,7 +16,6 @@ export function loadEvents() {
                     events
                 });
             });
-    };
 }
 
 export function addEvent(event) {

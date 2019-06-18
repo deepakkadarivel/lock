@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Comoponent Render Home compoent 1`] = `
+<div
+  className="Home"
+>
+  <h1>
+    Unlock Doors
+  </h1>
+  <div
+    className="Doors"
+  >
+    <div
+      className="Doors-item"
+      onClick={[Function]}
+      role="presentation"
+    >
+      <i
+        className="material-icons"
+      >
+        meeting_room
+      </i>
+      door one
+    </div>
+    <div
+      className="Doors-item"
+      onClick={[Function]}
+      role="presentation"
+    >
+      <i
+        className="material-icons"
+      >
+        meeting_room
+      </i>
+      door two
+    </div>
+    <div
+      className="Doors-item"
+      onClick={[Function]}
+      role="presentation"
+    >
+      <i
+        className="material-icons"
+      >
+        meeting_room
+      </i>
+      door two
+    </div>
+  </div>
+  <button
+    className="Fab ripple"
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="material-icons"
+    >
+      person_outline
+    </i>
+  </button>
+</div>
+`;
