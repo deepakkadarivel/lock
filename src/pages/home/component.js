@@ -41,7 +41,9 @@ class Home extends Component {
         return (
             <div className="Home">
                 <h1>{t('unlockDoors')}</h1>
-                {!doors.length && <p>{t('empty.home')}</p>}
+                {!doors.length && (
+                    <p className="t-placeholder">{t('empty.home')}</p>
+                )}
                 <div className="Doors">
                     {doors.map(door => (
                         <Door
@@ -59,6 +61,7 @@ class Home extends Component {
                         header={t('selectPerson')}
                         form={
                             <Select
+                                className="t-input--users"
                                 styles={customStyles}
                                 options={people}
                                 placeholder={t('placeholder.selectDoors')}

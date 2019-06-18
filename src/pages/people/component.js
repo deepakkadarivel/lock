@@ -57,7 +57,9 @@ class People extends Component {
         return (
             <div>
                 <h1>{t('nav.people')}</h1>
-                {!people.length && <p>{t('empty.people')}</p>}
+                {!people.length && (
+                    <p className="t-placeholder">{t('empty.people')}</p>
+                )}
                 {people.map(person => (
                     <Card
                         icon="person_outline"
@@ -123,7 +125,7 @@ class People extends Component {
                                 }) => (
                                     <Form>
                                         <Field
-                                            className="Form-input"
+                                            className="Form-input t-input--name"
                                             type="text"
                                             autoFocus
                                             name="name"
@@ -137,6 +139,7 @@ class People extends Component {
                                             className="Form-input--error"
                                         />
                                         <Select
+                                            className="t-input--doors"
                                             name="accessibleDoors"
                                             options={doors}
                                             isMulti
@@ -153,14 +156,14 @@ class People extends Component {
                                         <div className="Form-footer">
                                             <button
                                                 type="button"
-                                                className="Btn"
+                                                className="Btn t-cancel"
                                                 onClick={this.toggleDialog}
                                             >
                                                 {t('buttons.cancel')}
                                             </button>
                                             <button
                                                 type="submit"
-                                                className="Btn Btn-primary"
+                                                className="Btn Btn-primary t-add"
                                                 disabled={isSubmitting}
                                             >
                                                 {isUpdate

@@ -2,7 +2,7 @@
 // @ts-check
 
 describe('Doors page', () => {
-    it('Render empty doors page initially and add a door', () => {
+    it('Add and remove doors', () => {
         // Render empty doors page initially
         cy.visit('/doors');
         cy.get('.t-placeholder').contains('No doors available, add some.');
@@ -22,7 +22,6 @@ describe('Doors page', () => {
         cy.get('.t-delete').click();
 
         // Render empty doors page finally
-        cy.visit('/doors');
         cy.get('.t-placeholder').contains('No doors available, add some.');
     });
 });
