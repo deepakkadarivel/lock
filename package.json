@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dexie": "^2.0.4",
+    "dexie": "^3.2.2",
     "formik": "^1.5.7",
     "gh-pages": "^2.0.1",
     "indexeddbshim": "^4.1.0",
